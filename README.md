@@ -20,13 +20,12 @@ This Verilog project implements a Programmable Interval Timer (PIT) suitable for
 
 ## Usage
 
-Explain how to use the PIT design in a Verilog project. Provide instructions for instantiating the `pit_top` module and connecting its inputs and outputs.
+To use the PIT design, instantiate the `pit_top` module in your Verilog project and connect the appropriate inputs and outputs according to your system requirements.
 
 ## Parameters
 
 - `COUNT_SIZE`: Main counter size. (Default: 16)
 - `NO_PRESCALE`: Set to 1 to disable prescaler functionality. (Default: 0)
-- Other parameters and their descriptions.
 
 ## License
 
