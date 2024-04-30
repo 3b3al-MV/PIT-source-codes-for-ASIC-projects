@@ -1,41 +1,3 @@
-////////////////////////////////////////////////////////////////////////////////
-//
-//  Programable Interrupt Timer - Prescale Counter
-//
-//  Author: Ahmed Abdelazeem
-//          ahmed-abdelazeem@outlook.com
-//
-//  
-//
-////////////////////////////////////////////////////////////////////////////////
-// Copyright (c) 2020, Ahmed Abdelazeem
-//
-// All rights reserved.
-//
-// Redistribution and use in source and binary forms, with or without
-// modification, are permitted provided that the following conditions are met:
-//     * Redistributions of source code must retain the above copyright
-//       notice, this list of conditions and the following disclaimer.
-//     * Redistributions in binary form must reproduce the above copyright
-//       notice, this list of conditions and the following disclaimer in the
-//       documentation and/or other materials provided with the distribution.
-//     * Neither the name of the <organization> nor the
-//       names of its contributors may be used to endorse or promote products
-//       derived from this software without specific prior written permission.
-//
-// THIS SOFTWARE IS PROVIDED BY Ahmed Abdelazeem ''AS IS'' AND ANY
-// EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-// DISCLAIMED. IN NO EVENT SHALL Ahmed Abdelazeem BE LIABLE FOR ANY
-// DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-// (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-// LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-// ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-// SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-////////////////////////////////////////////////////////////////////////////////
-// 45678901234567890123456789012345678901234567890123456789012345678901234567890
-
 module pit_prescale #(parameter COUNT_SIZE = 15,
                       parameter DECADE_CNTR = 1,
 		      parameter NO_PRESCALE = 0)
@@ -52,8 +14,8 @@ module pit_prescale #(parameter COUNT_SIZE = 15,
   );
   
 // Warning: This counter has no safety net if the divisor changes while the
-//           counter is active. There may need to be an addtional latch
-//           register for"divisor" that captures on the falling edge of
+//           counter is active. There may need to be an additional latch
+//           register for"divisor" that captures the falling edge of
 //           "cnt_sync_o" or when "cnt_n" rolls over to eliminate this problem.
 
 reg    [COUNT_SIZE-1:0] cnt_n;         // Div N counter
@@ -62,8 +24,8 @@ reg    [COUNT_SIZE-1:0] end_count;     // Psudo register for decoding
 wire                    div_1;         // 
 wire                    rollover;      // 
 
-// This was going to be a "generate" block but iverilog does't support that
-//  command so we'll just have to trust the compiler to simplify the logic based
+// This was going to be a "generate" block but iverilog doesn't support that
+//  command so we'll just have to trust the compiler to simplify the logic-based
 //  on the setting of the constant "DECADE_CNTR"
    always @*
      if ( DECADE_CNTR )
