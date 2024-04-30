@@ -3,7 +3,7 @@ Programmable Interval Timer (PIT) Design
 This Verilog project implements a Programmable Interval Timer (PIT) suitable for use in FPGA or ASIC designs. The PIT supports features such as:
 
 Configurable main counter size
-Prescaler functionality with optional decade counter
+Prescaler functionality with an optional decade counter
 Wishbone bus interface for register access
 Support for synchronous and asynchronous reset
 PIT interrupt generation
