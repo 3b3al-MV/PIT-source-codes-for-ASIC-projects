@@ -2,16 +2,21 @@
 
 ## Introduction
 
-Briefly introduce the project and its purpose. Describe the features provided by the PIT design.
+This Verilog project implements a Programmable Interval Timer (PIT) suitable for use in FPGA or ASIC designs. The PIT supports features such as:
+
+-- `Configurable` main counter size
+Prescaler functionality with an optional decade counter
+Wishbone bus interface for register access
+Support for synchronous and asynchronous reset
+PIT interrupt generation
 
 ## Files Included
 
-- `pit_count.v`: Description of the main counter module.
-- `pit_prescale.v`: Description of the prescaler module.
-- `pit_regs.v`: Description of the control register module.
-- `pit_wb_bus.v`: Description of the Wishbone bus interface module.
-- `pit_top.v`: Description of the top-level module integrating all components.
-- Other Verilog files (if any) related to the project.
+- `pit_count.v`: Main counter module.
+- `pit_prescale.v`: Prescaler module.
+- `pit_regs.v`: Control register module.
+- `pit_wb_bus.v`: Wishbone bus interface module.
+- `pit_top.v`: Top-level module integrating all components.
 
 ## Usage
 
